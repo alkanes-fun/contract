@@ -1,0 +1,15 @@
+[package]
+name = "alkanes-std-maga-common"
+version.workspace = true
+edition.workspace = true
+
+[features]
+default = ["runtime"]
+runtime = ["dep:alkanes-runtime", "dep:alkanes-support", "dep:metashrew-support"]
+
+[dependencies]
+anyhow = { workspace = true }
+ruint = { workspace = true }
+alkanes-runtime = { workspace = true, optional = true }
+alkanes-support = { workspace = true, optional = true }
+metashrew-support = { workspace = true, optional = true }

@@ -1,0 +1,14 @@
+[package]
+name = "alkanes-std-maga-launch"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+alkanes-runtime = { workspace = true }
+alkanes-support = { workspace = true }
+metashrew-support = { workspace = true }
+anyhow = { workspace = true }
+alkanes-std-maga-common = { path = "../common" }

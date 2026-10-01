@@ -1,0 +1,10 @@
+Copyright (c) 2026. All rights reserved.
+
+This source code is made available for reading and for verifying the deployed
+contracts only. No license is granted to use, copy, modify, merge, publish,
+distribute, sublicense, deploy or sell it, in whole or in part, except as
+permitted by applicable law.
+
+Portions of pool/ are derived from OYL AMM (https://github.com/Oyl-Wallet/oyl-amm),
+Copyright (c) 2024 SANDSHREW, and remain under the MIT License reproduced in
+pool/LICENSE-oyl-amm. Those portions are not covered by the reservation above.

@@ -1,0 +1,16 @@
+[package]
+name = "alkanes-std-maga-pool"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+alkanes-support = { workspace = true }
+alkanes-runtime = { workspace = true }
+alkanes-std-maga-common = { path = "../common" }
+metashrew-support = { workspace = true }
+alkanes-std-factory-support = { workspace = true }
+anyhow = { workspace = true }
+ruint = { workspace = true }
