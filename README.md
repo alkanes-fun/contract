@@ -12,10 +12,15 @@ exactly this code.
 | Pool (template) | `2:98913` | `95658e8c6ca57232fed20b8f1bbde5af8f15cd65f6743fab3366211e34d1f504` | `e23e9f0abdecbfb1f9b7526ad07c1f8e39228f6b0dc45badd912e42a04e1d118` |
 | Creator credential (template) | `2:98914` | `7beb74264986a7d076811f603babd7932e3e2a7241c277296b4115167e1a5f2d` | `0cef86665f7743055b5daf385905da412fe737383238d0b8399a38a82c07f0aa` |
 | Registry | `2:98916` | `a9f879c9b698e1d1990206e48f14a0daf93a7eb31178880b884f5c3f2485f7d4` | `00d4336492063019e3b4f08ee2ef457bf08badc2e2e171bfb7e6c6fe739e2acf` |
+| Trustee | `2:102627` | `25e9dc9207d898c53371b1c824d743ec9e37f453ff6a3890561f1a317837158d` | `ab6a07a4866bed673288b857dd5d7e4bf8e0df1acbad472951c992974009124a` |
 
 The Registry is the entry point. Every project it creates gets its own Launch, Pool
 and token, cloned from the three templates above. The creator credential template is
 alkanes-rs's own `alkanes-std-auth-token`, deployed unchanged.
+
+The Trustee holds the platform credential and restricts its use to fee collection.
+See [How the Trustee removes the pause permission](TRUSTEE.md) for its design,
+deployment details, retained permissions and the checks needed to verify renunciation.
 
 ## Verify in one command
 
@@ -46,7 +51,7 @@ alkanes_std_maga_registry.wasm
   listed   00d4336492063019e3b4f08ee2ef457bf08badc2e2e171bfb7e6c6fe739e2acf
   MATCH
 
-4 of 4 deployments match the source in this repository
+5 of 5 deployments match the source in this repository
 ```
 
 Any difference prints `MISMATCH` or `ERROR` and exits with status 1.
@@ -92,6 +97,7 @@ An emulated build takes considerably longer than a native one.
 | `registry` | Creates projects: one Launch, one Pool and the project token |
 | `launch` | Bonding-curve sale of a project token; graduates into its Pool |
 | `pool` | Constant-product AMM for a graduated project, derived from OYL AMM |
+| `trustee` | Holds the platform credential; lets the revenue-token holder collect fees |
 
 The crate, type and file names (`alkanes-std-maga-*`, `MagaLaunch`, ...) are the
 names the contracts were built under. They are compiled into the WASM, so they stay

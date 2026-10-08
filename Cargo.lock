@@ -793,6 +793,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "alkanes-std-maga-trustee"
+version = "0.1.0"
+dependencies = [
+ "alkanes-runtime",
+ "alkanes-std-maga-common",
+ "alkanes-support",
+ "anyhow",
+ "metashrew-support",
+]
+
+[[package]]
 name = "alkanes-std-merkle-distributor"
 version = "2.2.1-rc.4"
 dependencies = [
